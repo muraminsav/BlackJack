@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>BlackJack</title>
+  <meta name="viewport" content="width=device-Width, initial-scale=1.0" />
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Black♠️Jack</h1>
+  </header>
+
+  <div class="background">
+    <div id="welcome">
+      <h1>Black♠️Jack</h1>
+      <hr>
+      <p>To play a round press START</p>
+      <button class="start" type="button" name="start">START</button><br>
+      <a href="about.html" target="_blank">About</a>
+    </div>
+    <div id="winner" style="display:none">
+      <h1>Black♠️Jack</h1>
+      <hr>
+      <h2 class="won"> </h2>
+      <a href="index.html"><button class="home" type="button"  name="home">
+
+      HOME</button></a>
+    </div>
+    <main class="table">
+      <h3 style="text-align: right">Dealer: <span id="dealerScore">
+
+        </span></h3>
+      <img class="deck" src="img/deck.png" alt="deck of cards">
+      <img class="deckCard" src="img/cardBack.png" alt="deckCard" style="display: none">
+      <section id="dealer">
+
+      </section>
+      <section id="player">
+
+      </section>
+
+
+      <h3 class="pScore">Your Score:<span id="playerScore">
+
+        </span> </h3>
+
+
+      <div class="action">
+        <button class="hit" type="button" name="button">HIT</button><br>
+        <button class="stand" type="button" name="button">STAND</button>
+
+      </div>
+
+    </main>
+
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+    </script>
+
+    <script src="index.js" charset="utf-8"></script>
+
+
+    <script src="jQueryRotate.js" charset="utf-8"></script>
+  </div>
+</body>
+
+
+</html>
