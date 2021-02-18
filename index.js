@@ -129,6 +129,11 @@ var bankWon = function() {
   }, 100);
   $("#winner").fadeIn(200);
   $(".won").html("Bank Won!");
+  $(".hr").css("background-color", "#7a0303");
+  $("#winner h1").css("color", "#7a0303");
+  $("h2.won").css("color", "#7a0303");
+  $(".bankWon").show().animate({left: "50%"},1000);
+$(".home").css("background-color", "#7a0303");
 };
 
 var playerWon = function() {
@@ -136,9 +141,12 @@ var playerWon = function() {
     direction: "up"
   }, 100);
   $("#winner").fadeIn(200);
-  $(".won").html("You Won!");
-  $("#winner").css("background-image", "url(https://equity.guru/wp-content/uploads/2017/05/gold-coins.gif);");
-
+  $(".playerWon").show(20);
+  $(".hr").css("background-color", "#ffc107");
+  $("#winner h1").css("color", "#ffc107");
+  $("h2.won").css("color", "#ffc107");
+  $(".won").html('You Won!'); 
+$(".home").css("background-color", "#ffc107");
 };
 
 // opening
