@@ -15,8 +15,21 @@ for (var i = 0; i < suits.length; i++) {
   }
 }
 
-
+var c=0;
 // Functions
+
+
+function dealer(dealerScore){
+  if (dealerScore>=17) return dealerScore;
+  c+=1;
+  setTimeout(function(){
+  dealToDealer(d());
+  setTimeout(function(){
+    dealerScore += revealCard("flipCBack", randomCard(), dealerCards, dealerScore)
+    return dealer( dealerScore);
+  },30*c);   
+},100*c) 
+}
 
 var rotation = function() {
   $(".deckCard").rotate({
@@ -86,11 +99,10 @@ var valuator = function(slice, where, sc) {
 var revealCard = function(to, value, where, sc) {
   var cardV = valuator(value.slice(1), where, sc);
   setTimeout(function() {
-    $("#" + to + "").append("<img src=img/deck/" + value + ".png style='padding-left:" + padding(where) + "px'>");
+    $("#" + to + "").append("<img src=img/deck/" + value + ".png style='padding-left:" + padding(where) + "px; padding-top:"+padding(where)+"px'>");
 
     where.push(cardV);
   }, 400);
-
 
   return parseInt(cardV);
 
@@ -109,11 +121,6 @@ var displayScore = function(timer) {
   }, timer);
 };
 
-var dealersTurn = function() {
-  dealToDealer(d());
-  sleep(400);
-  return dealerScore += revealCard("flipCBack", randomCard(), dealerCards, dealerScore);
-};
 
 var bankWon = function() {
 
@@ -168,7 +175,7 @@ play.bind("click",
       dealToDealer(d());
 
       setTimeout(function() {
-        $("#dealer").append('<div class="flipCard"> <div class="flipCardInner"><div class="flipCardFace"><img  src="img/cardBack.png" alt="card face down"></div><div class="flipCardBack" id="flipCBack"></div></div></div>');
+        $("#dealer").append('<div class="flipCard"> <div class="flipCardInner"><div class="flipCardFace"><img   src="img/cardBack.png" alt="card face down" style="padding-top:20px"></div><div class="flipCardBack" id="flipCBack"></div></div></div>');
 
       }, 400);
       setTimeout(function() {
@@ -178,9 +185,7 @@ play.bind("click",
   }
 );
 
- function sleep (milliseconds){
-  return new Promise(function resolve() {setTimeout(resolve, milliseconds);});
-}
+
 
 
 // Hit button
@@ -205,7 +210,7 @@ $(".hit").bind("click", function() {
 
 // Stand button
 $(".stand").bind("click", function() {
-  if (playerCards.length >= 2) {
+  if (playerCards.length >= 2 && $("#dealer").children().length >=2) {
     if (dealerCards.length < 2) {
       $(".flipCardInner").addClass("flip");
       setTimeout(function() {
@@ -216,21 +221,14 @@ $(".stand").bind("click", function() {
       }, 0);
       displayScore(400);
       setTimeout(function() {
-        if (dealerScore < 17) {
+        if (dealerScore < 17) {dealer(dealerScore);
           setTimeout(function() {
-            do {
 
-              dealToDealer(d());
-            // await sleep(100);
-              dealerScore += revealCard("flipCBack", randomCard(), dealerCards, dealerScore);
-              displayScore(400);
-
-            } while (dealerScore < 17);
-
-
+            dealerScore = dealerCards.reduce((a,b)=>{return a+b})
+            displayScore(10*c);
             setTimeout(function() {
               dealerScore <= 21 && playerScore <= dealerScore ? bankWon() : playerWon();
-            }, 1000);
+            }, 500*c);
           }, 1000);
         } else {
           setTimeout(function() {
