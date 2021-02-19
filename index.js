@@ -235,6 +235,10 @@ $(".stand").bind("click", function() {
             dealerScore = dealerCards.reduce((a,b)=>{return a+b})
             displayScore(10*c);
             setTimeout(function() {
+                debugger;
+              if( $(".dummy").css("dsilpay") === "none"){$(".flipcard").fadeOut(300)};
+
+
               dealerScore <= 21 && playerScore <= dealerScore ? bankWon() : playerWon();
             }, 500*c);
           }, 1000);

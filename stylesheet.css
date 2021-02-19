@@ -53,7 +53,7 @@ a {
 }
 
 #winner h2 {
-  padding-top: 18%;
+  padding-top: 19%;
 }
 
 .start {
@@ -118,7 +118,7 @@ body {
 img {
   position: absolute;
   left: 0;
-  width: 12%;
+  width: 90px;
   margin: 5px;
 }
 
@@ -148,7 +148,7 @@ img {
 }
 
 .deck {
-  width: 18%;
+  width: 120px;
   position: absolute;
   left: 6%;
   top: 1%;
@@ -220,11 +220,11 @@ img {
 
 .flipCardFace img {
   background: transparent;
-  width: 88%;
+  width: 90px;
 }
 
 .flipCardBack img {
-  width: 86%;
+  width: 90px;
 }
 
 .flipCardBack {
@@ -246,14 +246,14 @@ img {
   background-color: #230606d4;
   display: inline;
   position: absolute;
-  top: 75%;
+  bottom: 15px;
   left: -18%;
 }
 
 .action {
   position: absolute;
   right: -18%;
-  top: 75%;
+  bottom: 0;
 }
 
 .hit {
@@ -274,7 +274,7 @@ img {
   background-color: #ad11188f;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 876px) {
   .background {
     width: 100%;
     margin: 0;
@@ -290,26 +290,31 @@ img {
   .table {
     height: 80%;
   }
-}
 
-@media only screen and (max-width: 580px) {
+  .bankwon {
+    top: 2.5%;
+  }
+}
+@media only screen and (max-width: 560px) {
   #welcome {
     left: -52%;
     top: -30px;
   }
-  #welcome h1 {
-    margin-top: 50px;
-  }
+  #welcome h1,
   #winner h1 {
     margin-top: 50px;
   }
+
   #winner h2 {
-    padding-top: 37%;
+    padding-top: 21%;
   }
   .playerWon {
     width: 40%;
     top: 2%;
     left: 29%;
+  }
+  .bankwon {
+    top: 4%;
   }
   h1 {
     margin-top: -10px;
@@ -326,54 +331,30 @@ img {
     height: 100%;
     width: 100%;
   }
-  .flipCardFace img {
-    width: 80px;
-  }
-  .flipCardBack img {
-    width: 80px;
-  }
+  .flipCardFace img,
+  .flipCardBack img,
   img {
     width: 80px;
   }
+
   .deck {
-    width: 90px;
+    width: 95px;
   }
 
   .pScore {
-    top: 63%;
+    bottom: 120px;
     left: 0;
   }
 
   .action {
-    top: 63%;
+    bottom: 105px;
     right: 0;
   }
 }
 
 @media only screen and (max-width: 375px) {
-  .flipCardFace img {
-    width: 60px;
-  }
-  .flipCardBack img {
-    width: 60px;
-  }
-  img {
-    width: 60px;
-  }
-  .deck {
-    width: 70px;
-  }
-
-  .cardDeck {
-    width: 95px;
-  }
-
-  .deckCard {
-    left: 33px;
-  }
-
-  .action {
-    top: 62%;
+  .bankWon {
+    top: 5%;
   }
 
   .hit {
@@ -394,18 +375,18 @@ img {
     padding: 28px 43px 29px 19px;
     width: 30px;
     height: 47px;
-    top: 62%;
+
     font-size: 14px;
   }
 }
 
-@media screen and (max-height: 434px) and (orientation: landscape) {
+@media screen and (max-height: 500px) and (orientation: landscape) {
   html {
     background-color: #052f1d;
     transform: rotate(-90deg);
     transform-origin: left top;
-    width: 50%;
-    height: 200%;
+    width: 100vh;
+    height: 100vw;
     position: absolute;
     top: 100%;
     left: 0;
@@ -419,20 +400,26 @@ img {
     width: 100%;
   }
 
-  img {
-    width: 60px;
+  #welcome h1,
+  #winner h1 {
+    margin-top: 50px;
   }
 
-  .cardDeck {
-    width: 95px;
+  #winner h2 {
+    padding-top: 21%;
   }
-
-  .deckCard {
-    left: 33px;
+  .playerWon {
+    width: 40%;
+    top: 2%;
+    left: 29%;
+  }
+  .bankwon {
+    top: 4%;
   }
 
   .action {
-    top: 62%;
+    right: 0px;
+    bottom: 105px;
   }
 
   .hit {
@@ -453,8 +440,11 @@ img {
     padding: 28px 43px 29px 19px;
     width: 30px;
     height: 47px;
-    top: 62%;
+    bottom: 120px;
     left: 0;
     font-size: 14px;
+  }
+  .dummy {
+    display: none;
   }
 }
