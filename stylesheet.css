@@ -56,6 +56,26 @@ a {
   padding-top: 19%;
 }
 
+h1.about{
+  padding: 40px 0 10px 0;
+  font-size: 40px;
+}
+
+hr.about{margin-bottom: 40px;
+  height: 2px; 
+  width: 60%;
+  background-color: white;}
+
+p.about{
+  padding: 19px 60px 2px 60px;
+  font-size: 20px;
+}
+
+header h1{
+  display:inline;
+  margin: 0 50px 0 50px;
+}
+
 .start {
   outline: none;
   margin: 32px 0 70px 0;
@@ -70,9 +90,9 @@ a {
   font-size: 31px;
   font-weight: bold;
 }
-.home {
+.home, .rematch{
   outline: none;
-
+  box-shadow: inset 0px 0px 16px 2px black;
   width: 150px;
   height: 60px;
   border-radius: 25%;
@@ -93,7 +113,7 @@ a {
   position: absolute;
   z-index: -1;
   width: 16%;
-  top: 3%;
+  top: 200px;
   left: 27%;
 }
 
@@ -306,15 +326,26 @@ img {
   }
 
   #winner h2 {
-    padding-top: 21%;
+    padding-top: 26%;
   }
+  hr.about{
+    margin-bottom: 10px;
+  }
+  p.about{
+    font-size: 16px;
+  }
+  header h1{
+    
+    margin: 0 20px 0 20px;
+  }
+
   .playerWon {
     width: 40%;
     top: 2%;
     left: 29%;
   }
   .bankwon {
-    top: 4%;
+    top: 3.5%;
   }
   h1 {
     margin-top: -10px;
@@ -353,10 +384,28 @@ img {
 }
 
 @media only screen and (max-width: 375px) {
-  .bankWon {
-    top: 5%;
+  header h1{
+    
+    margin: 0 15px 0 15px;
   }
 
+  p.about{
+    padding-top: 10px;
+    font-size: 13px;
+  }
+  h1.about{
+  font-size: 30px;
+  margin-bottom: 4px;
+  }
+  hr.about{
+  margin-bottom: 7px;]}
+
+  .bankWon {
+    top: 4%;
+  }
+h2.won{
+  margin-top:4%;
+}
   .hit {
     height: 63px;
     width: 69px;
@@ -443,8 +492,5 @@ img {
     bottom: 120px;
     left: 0;
     font-size: 14px;
-  }
-  .dummy {
-    display: none;
   }
 }

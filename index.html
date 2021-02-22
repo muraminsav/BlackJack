@@ -13,11 +13,9 @@
 
 <body>
   <header>
-    <h1>Black♠️Jack</h1>
+  <h1 class="playerWins"></h1><h1>Black♠️Jack</h1><h1 class="bankWins"></h1>
   </header>
-
   <div class="background">
-
     <div id="welcome">
       <h1>Black♠️Jack</h1>
       <hr class="hr">
@@ -25,44 +23,30 @@
       <button class="start" type="button" name="start">START</button><br>
       <a href="about.html" target="_blank">About</a>
     </div>
-
     <div id="winner" style="display:none">
       <img src="img/lost.png" alt="lose money" class="bankWon">
       <img  src="img/win.gif" alt="coin rain" class="playerWon">
       <h1>Black♠️Jack</h1>
       <hr class="hr">
-      
       <h2 class="won"> </h2>
-      <a href="index.html"><button class="home" type="button"  name="home">
-
-      HOME</button></a>
+      <button class="rematch">REMATCH</button>
+      <a href="index.html"><button class="home" type="button"  name="home">HOME</button></a>
     </div>
     <main class="table">
       <h3 style="text-align: right">Dealer: <span id="dealerScore">
-
         </span></h3>
       <img class="deck" src="img/deck.png" alt="deck of cards">
       <img class="deckCard" src="img/cardBack.png" alt="deckCard" style="display: none">
       <section id="dealer">
-
       </section>
       <section id="player">
-
       </section>
-
-
       <h3 class="pScore">Your Score:<span id="playerScore">
-
-        </span> </h3>
-
-
+        </span></h3>
       <div class="action">
         <button class="hit" type="button" name="button">HIT</button><br>
         <button class="stand" type="button" name="button">STAND</button>
-
       </div>
-      <div class="dummy" ></div>
-
     </main>
 
 
